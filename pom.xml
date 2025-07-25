@@ -519,7 +519,7 @@
     <repository>
         <id>central</id>
         <name>a0ovohy0qtz3x-artifactory-primary-0-releases</name>
-        <url>https://triallfv487.jfrog.io/artifactory/demo3-libs-release-local</url>
+        <url>https://triallfv487.jfrog.io/artifactory/demo4-libs-release-local</url>
     </repository>
 </distributionManagement>
 </project>

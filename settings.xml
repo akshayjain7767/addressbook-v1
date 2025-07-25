@@ -4,12 +4,12 @@
   <servers>
     <server>
       <username>akshayjain7767@gmail.com</username>
-      <password>cmVmdGtuOjAxOjE3ODQ5MTgwNDc6YzJwSnNkNjlmbEFSbEYwazZiYURHc0JmQTZx</password>
+      <password>cmVmdGtuOjAxOjE3ODQ5ODU1ODM6UXV5V051enJ1TUxKMW9yYWFrS2ZRc2Q1TFlp</password>
       <id>central</id>
     </server>
     <server>
       <username>akshayjain7767@gmail.com</username>
-      <password>cmVmdGtuOjAxOjE3ODQ5MTgwNDc6YzJwSnNkNjlmbEFSbEYwazZiYURHc0JmQTZx</password>
+      <password>cmVmdGtuOjAxOjE3ODQ5ODU1ODM6UXV5V051enJ1TUxKMW9yYWFrS2ZRc2Q1TFlp</password>
       <id>snapshots</id>
     </server>
   </servers>
@@ -21,14 +21,14 @@
             <enabled>false</enabled>
           </snapshots>
           <id>central</id>
-          <name>demo1-libs-release</name>
-          <url>https://triallfv487.jfrog.io/artifactory/demo1-libs-release</url>
+          <name>demo4-libs-release</name>
+          <url>https://triallfv487.jfrog.io/artifactory/demo4-libs-release</url>
         </repository>
         <repository>
           <snapshots />
           <id>snapshots</id>
-          <name>demo1-libs-snapshot</name>
-          <url>https://triallfv487.jfrog.io/artifactory/demo1-libs-snapshot</url>
+          <name>demo4-libs-snapshot</name>
+          <url>https://triallfv487.jfrog.io/artifactory/demo4-libs-snapshot</url>
         </repository>
       </repositories>
       <pluginRepositories>
@@ -37,14 +37,14 @@
             <enabled>false</enabled>
           </snapshots>
           <id>central</id>
-          <name>demo1-libs-release</name>
-          <url>https://triallfv487.jfrog.io/artifactory/demo1-libs-release</url>
+          <name>demo4-libs-release</name>
+          <url>https://triallfv487.jfrog.io/artifactory/demo4-libs-release</url>
         </pluginRepository>
         <pluginRepository>
           <snapshots />
           <id>snapshots</id>
-          <name>demo1-libs-snapshot</name>
-          <url>https://triallfv487.jfrog.io/artifactory/demo1-libs-snapshot</url>
+          <name>demo4-libs-snapshot</name>
+          <url>https://triallfv487.jfrog.io/artifactory/demo4-libs-snapshot</url>
         </pluginRepository>
       </pluginRepositories>
       <id>artifactory</id>
