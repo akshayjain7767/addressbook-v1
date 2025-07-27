@@ -1,5 +1,8 @@
 pipeline {
     agent any
+    tool {
+        name: 'mymaven3', type: 'maven'
+    }
 
     parameters{
         string(name:'Env',defaultValue:'Test',description:'version to deploy')
@@ -63,7 +66,7 @@ pipeline {
         stage('PublishToJfrog') {
             steps {
                 script{
-                    echo 'Compile Hello World'
+                    echo 'PublishToJfrog Hello World'
                     echo "Deploying in ${params.Env} environment"
                     sh "mvn -U deploy -s settings.xml"
                 }
