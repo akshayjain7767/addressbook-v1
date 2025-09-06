@@ -66,6 +66,13 @@ pipeline {
             }
         }
         stage('PublishToJFrog') {
+            input {
+                message "Do you want to publish the artifact to Jfrog Or Nexus?"
+                ok "Yes,publish"
+                parameters {
+                    choice(name: "Platform", choices: ["Nexus", "Jfrog"])
+                }
+            }
             steps {
                 script {
                     echo 'PublishToJFrog World'
