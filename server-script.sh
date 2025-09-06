@@ -1,6 +1,6 @@
 sudo yum install java -y
 sudo yum install git -y
-sudo yum install maven -y
+# sudo yum install maven -y
 
 if [ -d "addressbook-v1" ]
 then

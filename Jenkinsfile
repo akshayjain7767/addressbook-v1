@@ -1,5 +1,5 @@
 pipeline {
-    agent any
+    agent none
     tools {
         maven "mymaven1"
     }
@@ -9,9 +9,13 @@ pipeline {
         choice(name:'APPVERSION',choices:['1.1','1.2','1.3'])
 
    }
+   environment {
+    BUILD_SERVER='ec2-user@172.31.46.169'
+   }
 
     stages {
         stage('Compile') {
+            agent any
             steps {
                 script {
                     echo 'Compile World'
@@ -21,6 +25,7 @@ pipeline {
             }
         }
         stage('CodeReview') {
+            agent {label 'linux_slave1'}
             steps {
                 script {
                     echo 'CodeReview World'
@@ -29,6 +34,7 @@ pipeline {
             }
         }
         stage('UnitTest') {
+            agent any
             when {
                 expression {
                     params.executeTests == true
@@ -48,6 +54,7 @@ pipeline {
             }
         }
         stage('CodeCoverageAnalysis') {
+            agent any
             steps {
                 script {
                     echo 'CodeCoverageAnalysis World'
@@ -57,15 +64,20 @@ pipeline {
             }
         }
         stage('Package') {
+            agent any
             steps {
                 script {
-                    echo 'Package World'
-                    echo "Packaging version is ${params.APPVERSION}"
-                    sh "mvn package"
+                    sshagent(['slave3']) {
+                        echo 'Package World'
+                        echo "Packaging version is ${params.APPVERSION}"
+                        sh "scp -o StrictHostKeyChecking=no server-script.sh ${BUILD_SERVER}:/home/ec2-user"
+                        sh "ssh -o StrictHostKeyChecking=no ${BUILD_SERVER} 'bash ~/server-script.sh'"
+}
                 }
             }
         }
         stage('PublishToJFrog') {
+            agent any
             input {
                 message "Do you want to publish the artifact to Jfrog Or Nexus?"
                 ok "Yes,publish"
